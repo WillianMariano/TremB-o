@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+</h:head> 
+<h:body>
+	<nav class="red darken-3">
+    	<div class="nav-wrapper">
+      		<a href="principal.xhtml" class="brand-logo center"><img src="img/logo.png"  width="60" height="50" style="padding-top: 4%;padding-right: 5%"></img>Cancelar pedido</a>
+    	</div>
+  	</nav>
+  	<div class="container" style="padding-top:5%"> 
+		<h:form>
+			<div class="row">	
+				<div class="col s4" style="text-align:right;padding-top: 5%">
+					<img src="img/cardapio.png"></img>
+				</div>
+				<div class="col s8" style="text-align:left;">
+					<h3 style="padding-bottom: 2%;">Pedidos do cliente</h3>
+				</div>
+			</div>
+			<h:dataTable id="tab_pedidos" value="#{cancelarbean.getpedidos(loginbean.cliente)}" var="pedido" class="centered highlight">
+				<h:column>
+					<h:dataTable id="tab_itens" value="#{pedido.itemcardapio}" var="itens">
+						<h:column>
+							<f:facet name="header">Imagem</f:facet>
+							<img src="#{itens.img}" width="200" height="200" class="circle"/>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Descrição</f:facet>
+							<h:outputText value="#{itens.descricao}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Preço:</f:facet>
+							<h:outputText value="#{itens.valor}" />
+						</h:column>
+					</h:dataTable>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Ações</f:facet>
+					<h:commandButton action="#{cancelarbean.cancelarpedido(pedido)}" value="Cancelar pedido" class="btn btn-primary red darken-3" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+		<br/><br/>
+		<div style="text-align: center;">
+			<a type="button" href="principal.xhtml" class="btn btn-primary red darken-3" >Home</a>
+		</div>
+	</div>
+</h:body> 
+</html>

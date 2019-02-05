@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<link href="https://fonts.googleapis.com/icon?family=Materil+Icons" rel="stylesheet"/>
+	<link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="sceen,projection"/>
+	<link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+</h:head> 
+<h:body> 
+	<nav class="red darken-3 navbar-fixed">
+    	<div class="row nav-wrapper">
+    		<div class="col s6">
+      			<a href="index.xhtml" class="brand-logo left" style="padding-left:10%"><img src="img/logo.png" class="hide-on-small-only" width="60" height="50" style="padding-top: 4%;padding-right: 5%"></img>TremBão</a>
+			</div>
+			<div class="col s6">
+				<ul id="nav-mobile" class="left" style="padding-left: 10%">
+			        <li><a class="hide-on-small-only" href="pedido.xhtml">Pedido</a></li>
+			        <li><a class="hide-on-small-only" href="cancelar.xhtml">Cancelar pedido</a></li>
+			        <li><a class="hide-on-med-and-up tooltipped" data-position="botton" data-tooltip="Pedido" href="pedido.xhtml"><i class="material-icons">add_shopping_cart</i></a></li>
+			        <li><a class="hide-on-med-and-up tooltipped" data-position="botton" data-tooltip="Cancelar pedido" href="cancelar.xhtml"><i class="material-icons">cancel</i></a></li>
+			    </ul>
+			    <h:form>
+					<h:commandLink class="hide-on-small-only" action="#{loginbean.logout()}" value="Logout"/>
+					<h:commandLink class="hide-on-med-and-up tooltipped" data-position="botton" data-tooltip="Logout" action="#{loginbean.logout()}" ><i class="material-icons">input</i></h:commandLink>
+			    </h:form>
+		    </div>
+    	</div>
+  	</nav>
+	<div class="slider">
+	    <ul class="slides">
+	      <li><img src="img/res2.jpg"></img></li>
+	      <li><img src="img/res1.jpg"></img></li>
+	      <li><img src="img/res.jpg"></img></li>
+	    </ul>
+	</div>
+	<div class="container">
+		<p>Da estrutura rústica ao tempero da boa comida, o TremBão continua encantando seus clientes. A boa música popular brasileira, 
+		tocada ao vivo, tornam o restaurante o local completo para quem busca aproveitar os melhores momentos em uma boa companhia.
+		Inaugurado em 1990, ena cidade de Alfenas, o TremBão possui um espaço amplo, diferenciado e convidativo para seus visitantes, 
+		seja para quem busca um espaço familiar, seja para os amantes de um ambiente rústico, o TremBão cumpre totalmente as espectativas de
+		quem visita o restaurante.Para completar o nosso ambiente especialmente convidativo, oferecemos um cardápio variado, em que cada detalhe 
+		foi criado com muito carinho para te oferecer uma experiência gastronômica única.Muitos ingredientes que utilizamos são cultivados em nossa 
+		própria horta, garantindo mais sabor e autenticidade aos nossos pratos. Venha experimentar os sabores e aromas no melhor estilo de Minas!</p>
+	</div>
+	<br/><br/>
+	<div>
+		<img src="img/Capturar.PNG" class="responsive-img"/>
+	</div>
+	<div class="footer-copyright red darken-3">
+            <div class="container center">
+            © 2018 Copyright Text
+            </div>
+            <div class="container center">  
+            Telefone: 4234-5435
+            <br/> 
+            Celular: 999545344
+            </div>
+    </div>
+  	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="materialize/js/materialize.js"></script>
+	<script src="materialize/js/init.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $('.slider').slider();
+		});
+		$(document).ready(function(){
+		    $('.sidenav').sidenav();
+		});
+		$(document).ready(function(){
+		    $('.tooltipped').tooltip();
+		});
+	</script>
+</h:body> 
+</html>

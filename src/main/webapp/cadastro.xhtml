@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	<link href="https://fonts.googleapis.com/icon?family=Materil+Icons" rel="stylesheet"/>
+	<link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="sceen,projection"/>
+	<link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+</h:head> 
+<h:body> 
+	<nav class="red darken-3">
+    	<div class="nav-wrapper">
+      		<a href="index.xhtml" class="brand-logo center"><img src="img/logo.png" class="hide-on-small-only" width="60" height="50" style="padding-top: 4%;padding-right: 5%"></img>Cadastro</a>
+    	</div>
+  	</nav> 
+  	<div class=" row container" style="text-align: center; display: block;margin-left: auto; margin-right: auto;margin-top: 5%;margin-bottom: auto;">
+		<h:form id="cadastro">
+			<div class="col s12">
+				<h:outputLabel value="Nome: " />
+				<h:inputText value="#{cadastrobean.cadastro.nome}" />
+			</div>
+			<br/>
+			<div class="col s8" style="padding-top: 3%">
+				<h:outputLabel value="Rua: " />
+				<h:inputText value="#{cadastrobean.cadastro.rua}" />
+			</div>
+			<div class="col s4" style="padding-top: 3%">
+				<h:outputLabel value="Numero: " />
+				<h:inputText value="#{cadastrobean.cadastro.numero}" />
+			</div>
+			<br/>
+			<div class="col s6" style="padding-top: 3%">
+				<h:outputLabel value="Bairro: " />
+				<h:inputText value="#{cadastrobean.cadastro.bairro}" />
+			</div>
+			<div class="col s6" style="padding-top: 3%">
+				<h:outputLabel value="Telefone: " />
+				<h:inputText value="#{cadastrobean.cadastro.telefone}" />
+			</div>
+			<br/>
+			<div class="col s6" style="padding-top: 3%">
+				<h:outputLabel value="Email: " />
+				<h:inputText value="#{cadastrobean.cadastro.email}" />
+			</div>
+			<div class="col s6" style="padding-top: 3%;padding-bottom:3%">
+				<h:outputLabel value="Senha: " />
+				<h:inputText value="#{cadastrobean.cadastro.senha}" />
+			</div>
+			<br/>
+			<div class="col s6">
+			<h:commandButton action="#{cadastrobean.salvar()}" value="Salvar cliente" class="btn btn-primary red darken-3"/>
+			</div>
+			<div class="col s6">
+			<h:commandButton action="index.xhtml" value="Cancelar" class="btn btn-primary grey darken-2"/>
+			</div>
+			<br/>
+			<p:message id="erro" for="erro" style="background-color: #FFFF00 ;color:black;" />
+		</h:form>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="materialize/js/materialize.js"></script>
+	<script src="materialize/js/init.js"></script>
+</h:body> 
+</html>
